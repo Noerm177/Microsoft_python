@@ -4,11 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-selenium = "*"
 
 [dev-packages]
 pytest = "*"
 autopep8 = "*"
+selenium = "==3.141.0"
+webdriver-manager = "*"
 
 [requires]
 python_version = "3.9"

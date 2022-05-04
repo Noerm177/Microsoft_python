@@ -1,7 +1,10 @@
 import json
 import pytest
 
-from selenium.webdriver import Chrome
+from selenium import webdriver
+from selenium.webdriver.chrome.service import service
+from webdriver_manager.chrome import ChromeDriverManager
+#from selenium.webdriver import Chrome
 
 
 CONFIG_PATH = 'tests/config.json'
@@ -18,7 +21,7 @@ def config():#Create a json file with browser an wait time
 @pytest.fixture()
 def browser(config):#Create the set up driver 
     if config['browser'] == 'chrome':
-        driver = Chrome()
+        driver = webdriver.Chrome(ChromeDriverManager().install())
     else:
         raise Exception(f'"{config["browser"]}" is not a supported browser')
 

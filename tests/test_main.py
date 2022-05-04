@@ -1,5 +1,3 @@
-import pytest
-
 from pages.dashboard import DashBoardPage
 
 
